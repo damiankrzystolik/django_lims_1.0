@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Jakas podstrona
+{% endblock %}
+
+{% block content %}
+    <h1>Lista Klientów</h1>
+
+    <section>
+         <table>
+            <thead>
+                <tr>
+                    <th>Nazwa Klienta</th>
+                    <th>Adres</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                <tr>
+                    <td>{{ client.name }}</td>
+                    <td>{{ client.address }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+         </table>
+    </section>
+{% endblock %}
+
+
+
+

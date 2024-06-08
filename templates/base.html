@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+            Django App
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="/"><img src="{% static 'images/home.png' %}"></a> |
+        <a href="/orm"><img src="{% static 'images/new-employee.png' %}"></a> |
+        <a href="/klienci"><img src="{% static 'images/rating.png' %}"></a> |
+        <a href="/admin"><img src="{% static 'images/software-engineer.png' %}"></a> |
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+        
+    </main>
+   
+<a href="/" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
+</body>
+</html>

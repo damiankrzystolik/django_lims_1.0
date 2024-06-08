@@ -1,0 +1,124 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 3rem;
+    display: flex;
+    flex-flow: column;
+}
+
+nav {
+    padding: 1rem;
+    background-color: #44B78B;
+    color: white;
+    font-size: 2.5rem;
+}
+
+main {
+    flex-grow: 1;
+    display: grid;
+    place-content: center;
+}
+
+h1,
+p {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #44B78B;
+}
+
+a:hover {
+    opacity: .65;
+}
+
+section {
+    width: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #f9f9f9;
+    color: #444;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #f1f1f1;
+    font-size: 2rem;
+}
+
+tbody {
+    font-size: 1rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #44B78B;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e8f4f2;
+}
+/*
+ **Kolor Tła `#f9f9f9` oraz Czarny Tekst `#000000`:** Ogólne kolory strony, aby całość była czytelna i estetyczna.
+- **Nagłówek `header`:** Używa koloru `#44B78B` jako tła, z centrowaniem zawartości.
+- **Głównasekcja `content`: Mieści się w 80% szerokości ekranu, ma białe tło oraz obramowanie.
+- **Nagłówki `h1`:** Używają koloru `#44B78B` i są wycentrowane.
+- **Linki `a`:** Mają kolor `#44B78B`, a po najechaniu myszką tekst staje się podkreślony.
+- **Tabela**:
+  - Nagłówki tabeli `thead`: Tło w kolorze `#44B78B` i biały kolor tekstu.
+  - Komórki tabeli `th`, `td`: Mają obramowanie, padding oraz tekst wyrównany do lewej.
+  - Rzędy tabeli `tr:nth-child(even)`: Co drugi rząd ma delikatny jaśniejszy kolor tła, aby ułatwić czytanie.
+  - Rzędy tabeli `tr:hover`: Zmieniają kolor tła na jaśniejszy odcień zielonego po najechaniu myszką (`#e8f4f2`), co poprawia interaktywność.*/
+
+.homepage {
+    position: fixed;
+    right: 20px;  /* Odległość od prawej krawędzi */
+    bottom: 20px; /* Odległość od dolnej krawędzi */
+    /*background-color: #44B78B; !* Opcjonalny kolor tła dla linku *!*/
+    padding: 10px;
+    /*border-radius: 50%;*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage img {
+    width: 24px; /* Szerokość obrazka, dostosuj według potrzeb */
+    height: 24px; /* Wysokość obrazka, dostosuj według potrzeb */
+}
+
+.homepage:hover {
+    /*background-color: #099b72; !* Kolor tła na hover *!*/
+}
