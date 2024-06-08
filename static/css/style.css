@@ -122,3 +122,9 @@ tr:hover {
 .homepage:hover {
     /*background-color: #099b72; !* Kolor tła na hover *!*/
 }
+
+.table-wrapper {
+        overflow-y: auto;
+        max-height: 400px; /* Maksymalna wysokość kontenera z przewijaniem */
+        border: 1px solid #ddd;
+    }

@@ -9,6 +9,7 @@
     <h1>Lista Klientów</h1>
 
     <section>
+    <div class="table-wrapper">
          <table>
             <thead>
                 <tr>
@@ -18,13 +19,18 @@
             </thead>
             <tbody>
                 {% for client in clients %}
-                <tr>
-                    <td>{{ client.name }}</td>
-                    <td>{{ client.address }}</td>
-                </tr>
+                    <tr>
+                        <td>
+                            <a href="{% url 'orm:client_page' slug=client.slug %}">
+                                {{ client.name }}
+                            </a>
+                        </td>
+                        <td>{{ client.address }}</td>
+                    </tr>
                 {% endfor %}
             </tbody>
          </table>
+    </div>
     </section>
 {% endblock %}
 
