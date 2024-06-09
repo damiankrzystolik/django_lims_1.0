@@ -8,9 +8,16 @@
 {% endblock %}
 
 {% block content %}
-    <h1>
-        Nowy Klient
-    </h1>
+    <div class="client">
+        <h1>
+            Nowy Klient
+        </h1>
+        <form class="form-with-validation " action="{% url 'orm:new-client' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button class="form-submit button-33">Dodaj Klienta</button>
+        </form>
+    </div>
     <a href="/klienci" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
 {% endblock %}
 

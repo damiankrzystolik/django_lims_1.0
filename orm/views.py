@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Client
 from django.contrib.auth.decorators import login_required
+from . import forms
 
 
 
@@ -15,4 +16,5 @@ def client_page(request, slug):
 
 @login_required(login_url='/users_app/login')
 def client_new(request):
-    return render(request, 'klienci/client_new.html')
+    form = forms.CreateClient()
+    return render(request, 'klienci/client_new.html', {"form": form})
