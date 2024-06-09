@@ -114,6 +114,13 @@ tr:hover {
     justify-content: center;
 }
 
+.client {
+    color: whitesmoke;
+    position: absolute;
+    left: 20px;
+
+}
+
 .homepage img {
     width: 24px; /* Szerokość obrazka, dostosuj według potrzeb */
     height: 24px; /* Wysokość obrazka, dostosuj według potrzeb */
@@ -128,3 +135,77 @@ tr:hover {
         max-height: 400px; /* Maksymalna wysokość kontenera z przewijaniem */
         border: 1px solid #ddd;
     }
+
+.banner {
+    /*display: block;*/
+    /*width: auto;*/
+    max-width: 400px;
+    height: auto;
+    /*max-height: 400px;*/
+    padding-top: 10px;
+}
+
+.form-with-validation input {
+    padding: 0.25rem;
+    max-width: 300px;
+    font-size: 1rem;
+
+}
+ul {
+    list-style-type: none;
+}
+
+.register-form {
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+/*button {*/
+/*    font-size: 1.5rem;*/
+/*    padding: 0.5rem 1rem;*/
+/*    margin: 1rem 0rem 1rem 0rem;*/
+
+
+
+/* CSS */
+.button-33 {
+    margin: 1rem 0rem 1rem 0rem;
+  background-color: #44B78B;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.errorlist {
+    color: red;
+}
+
+.navbar {
+    display: flex;
+    align-items: center; /* Optional: Align items vertically centered*/
+}
+
+.navbar a {
+    padding: 0 10px; /* Adjust spacing between links as needed */
+}
+
+.navbar .admin_logo {
+    margin-left: auto; /* Pushes the admin link to the right */
+}

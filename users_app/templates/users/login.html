@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+
 {% block title %}
-    Nowy Klient
+   Logowanie
 {% endblock %}
 
 {% block content %}
-  <h1>Formularz dodania klienta</h1>
-    <p><img src="{% static 'images/coffee-break.png' %}"></p>
-{#    <form class="form-with-validation register-form" action="{% url 'users_app:register' %}" method="POST">#}
-    
-{# pierwsza wersja formularza#}
+    <div class="client ">
+        <h1>Logowanie</h1>
+        <form class="form-with-validation register-form" action="{% url 'users_app:login' %}" method="POST">
 {#            {% csrf_token %}#}
 {#            {{ form.as_p }}#}
 {#            {% if form.errors %}#}
@@ -25,15 +25,16 @@
 {#                {% endfor %}#}
 {#                </ul>#}
 {#            {% endif %}#}
-{#            <button type="submit">Zarejestruj się</button>#}
+{#            <button class="button-33" role="button" type="submit">Zarejestruj się</button>#}
 
-{#    druga wersja formularza#}
-{#        {% csrf_token %}#}
-{#        {{ form }}#}
-{#        <button class="button-33" role="button">Submit</button>#}
-    
-{#    </form>#}
-    
-   <a href="/" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
+            {% csrf_token %}
+            {{ form }}
+            <button class="button-33" role="button">Zaloguj</button>
+        </form>
+        <a href="/" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
+    </div>
+
 {% endblock %}
+
+
 

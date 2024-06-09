@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+   {{ client.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="client">
+        <img
+            class="banner"
+            src="{{ client.banner.url }}"
+            />
+        <h1>{{ client.name }}</h1>
+        <p>{{ client.address }}</p>
+    </div>
+    <a href="/klienci" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
+{% endblock %}
+
+
+
+

@@ -13,11 +13,13 @@
     <script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
-    <nav>
-        <a href="/"><img src="{% static 'images/home.png' %}"></a> |
-        <a href="/orm"><img src="{% static 'images/new-employee.png' %}"></a> |
-        <a href="{% url 'orm:client_list' %}"><img src="{% static 'images/rating.png' %}"></a> |
-        <a href="/admin"><img src="{% static 'images/software-engineer.png' %}"></a> |
+    <nav class="navbar">
+        <a href="/" title="Strona domowa"><img src="{% static 'images/home.png' %}"></a> |
+        <a href="/orm" title="Nowy Klient"><img src="{% static 'images/new-employee.png' %}"></a> |
+        <a href="{% url 'orm:client_list' %}" title="Klienci"><img src="{% static 'images/rating.png' %}"></a> |
+        <a href="{% url 'users_app:login' %}" title="Logowanie"><img src="{% static 'images/password.png' %}"></a> | {# login#}
+        <a href="{% url 'users_app:register' %}" title="Nowy użytkownik"><img src="{% static 'images/user.png' %}" alt="user icon"></a>  {# register#}
+        <a href="/admin" title="Admin, czyli Ja" class="admin_logo"><img src="{% static 'images/software-engineer.png' %}"></a>  {# admin#}
     </nav>
     <main>
         {% block content %}
@@ -25,6 +27,6 @@
 
     </main>
 
-<a href="/" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
+
 </body>
 </html>
