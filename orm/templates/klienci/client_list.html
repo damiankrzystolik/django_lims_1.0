@@ -13,19 +13,25 @@
          <table>
             <thead>
                 <tr>
+                    <th>ID Klienta</th>
                     <th>Nazwa Klienta</th>
                     <th>Adres</th>
+                    <th>Dodany przez</th>
                 </tr>
             </thead>
             <tbody>
                 {% for client in clients %}
                     <tr>
                         <td>
+                            {{ client.id }}
+                        </td>
+                        <td>
                             <a href="{% url 'orm:client_page' slug=client.slug %}">
                                 {{ client.name }}
                             </a>
                         </td>
                         <td>{{ client.address }}</td>
+                        <td>{{ client.author }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

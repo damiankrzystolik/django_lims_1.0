@@ -10,9 +10,9 @@ class Client(models.Model):
     slug = models.SlugField()
     date = models.DateTimeField(auto_now_add=True)
     banner = models.ImageField(default='aaa.png', blank=True)
-    author = models.ForeignKey(User, models.SET_NULL, null=True, blank=True, default=None)
+    author = models.ForeignKey(User,  on_delete=models.SET_NULL, null=True, blank=True, default=None)
 
 
     def __str__(self):
-        return self.author.username if self.author else "No Author"
+        return f'{self.name} - {self.slug}'
 

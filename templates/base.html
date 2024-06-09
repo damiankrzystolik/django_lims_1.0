@@ -14,15 +14,17 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" title="Strona domowa"><img src="{% static 'images/home.png' %}"></a> |
+        <a href="/" title="Strona domowa"><img src="{% static 'images/home.png' %}"></a> ||
         {% if user.is_authenticated %}
             <a href="{% url 'orm:new-client' %}" title="Nowy Klient"><img src="{% static 'images/new-employee.png' %}"></a> |
-            <a href="{% url 'orm:client_list' %}" title="Klienci"><img src="{% static 'images/rating.png' %}"></a> |        
+            <a href="{% url 'orm:client_list' %}" title="Klienci"><img src="{% static 'images/rating.png' %}"></a> ||   
+            <a href="{% url 'users_app:register' %}" title="Nowy użytkownik"><img src="{% static 'images/user.png' %}" alt="user icon"></a> | {# register#}
             <form class="logout" action="{% url 'users_app:logout' %}" method="post">
                 {% csrf_token %}
     
                 <button class="logout-button" title="Wyloguj"><img src="{% static 'images/exit-door.png' %}"></button>
             </form> |
+            
         
         {% else %}
             <a href="{% url 'users_app:register' %}" title="Nowy użytkownik"><img src="{% static 'images/user.png' %}" alt="user icon"></a> | {# register#}

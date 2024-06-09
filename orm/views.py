@@ -19,7 +19,9 @@ def client_new(request):
     if request.method == 'POST':
         form = forms.CreateClient(request.POST, request.FILES)
         if form.is_valid():
-            # save with user
+            new_client = form.save(commit=False)
+            new_client.author = request.user
+            new_client.save()
             return redirect('orm:client_list')
     else:
         form = forms.CreateClient()
