@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Client
 from django.contrib.auth.decorators import login_required
 from . import forms
@@ -16,5 +16,11 @@ def client_page(request, slug):
 
 @login_required(login_url='/users_app/login')
 def client_new(request):
-    form = forms.CreateClient()
+    if request.method == 'POST':
+        form = forms.CreateClient(request.POST, request.FILES)
+        if form.is_valid():
+            # save with user
+            return redirect('orm:client_list')
+    else:
+        form = forms.CreateClient()
     return render(request, 'klienci/client_new.html', {"form": form})
