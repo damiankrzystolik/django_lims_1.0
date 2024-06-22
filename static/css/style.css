@@ -59,7 +59,7 @@ h1 {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 0;
+    margin-top: 20px;
 }
 
 thead {
@@ -243,8 +243,4 @@ tr:hover {
 
 .navbar .admin_logo {
     margin-left: auto; /* Pushes the admin link to the right */
-}
-
-#magiczny_tusz {
-    color: #44B78B;
 }

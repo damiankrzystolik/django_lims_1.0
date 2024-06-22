@@ -9,9 +9,6 @@
 
 {% block content %}
     <div class="client">
-        <div>
-            <a href="{% url 'orm:edit_client' id=client.id slug=client.slug %}" class="form-submit button-33">Edytuj</a>
-        </div>
         <img
             class="banner"
             src="{{ client.banner.url }}"
@@ -20,9 +17,7 @@
         <p>{{ client.address }}</p>
         <p>{{ client.author }}</p>
     </div>
-
     <a href="/klienci" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
-
 {% endblock %}
 
 
