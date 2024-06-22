@@ -15,8 +15,9 @@
                 <tr>
                     <th>ID Klienta</th>
                     <th>Nazwa Klienta</th>
+
                     <th>Adres</th>
-                    <th>Dodany przez</th>
+                    <th>Dodany przez użytkownika</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,10 +27,11 @@
                             {{ client.id }}
                         </td>
                         <td>
-                            <a href="{% url 'orm:client_page' slug=client.slug %}">
+                            <a href="{% url 'orm:client_page'  id=client.id slug=client.slug %}">
                                 {{ client.name }}
                             </a>
                         </td>
+                         
                         <td>{{ client.address }}</td>
                         <td>{{ client.author }}</td>
                     </tr>

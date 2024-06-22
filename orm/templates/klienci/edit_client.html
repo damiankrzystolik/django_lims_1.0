@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Edytuj klienta: {{ client.name }}
+{% endblock %}
+
+{% block content %}
+  <h1>Edytuj klienta: {{ client.name }}</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Zapisz zmiany</button>
+  </form>
+  <a href="{% url 'orm:client_page'  id=client.id slug=client.slug %}">Anuluj</a>
+{% endblock %}

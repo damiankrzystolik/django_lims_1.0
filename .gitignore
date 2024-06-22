@@ -1,0 +1,12 @@
+# Python
+*.pyc
+__pycache__/
+env/
+venv/
+.env
+
+# Django
+db.sqlite3
+# media/
+
+CSV
