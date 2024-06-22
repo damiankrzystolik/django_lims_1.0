@@ -1,4 +1,13 @@
-# created by virtualenv automatically
-
+# Python
+*.pyc
+__pycache__/
+env/
 .venv/
-CSV/
+.env
+
+# Django
+db.sqlite3
+# media/
+
+CSV
+/CSV/
