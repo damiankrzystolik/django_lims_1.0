@@ -6,8 +6,9 @@ from django.http import HttpResponse
 
 
 # Create your views here.
+@login_required(login_url='/users_app/login')
 def client_list(request):
-    clients = Client.objects.all().order_by('-name')
+    clients = Client.objects.all().order_by('name')
     return render(request, 'klienci/client_list.html', {"clients": clients})
 
 def client_page(request, id, slug):
@@ -48,3 +49,10 @@ def edit_client(request, id, slug):
       print('5')
       return render(request, 'klienci/edit_client.html', {'form': form, 'client': client})
     return render(request, 'klienci/edit_client.html', {'form': form, 'client': client})
+
+def delete_client(request, id, slug):
+    client = Client.objects.get(id=id, slug=slug)
+    if request.method == 'POST':
+        client.delete()
+        return redirect('orm:client_list')
+    return redirect('orm:client_detail', id=id)

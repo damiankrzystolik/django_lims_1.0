@@ -11,6 +11,12 @@
     <div class="client">
         <div>
             <a href="{% url 'orm:edit_client' id=client.id slug=client.slug %}" class="form-submit button-33">Edytuj</a>
+
+            <!-- Delete Button Form -->
+        <form action="{% url 'orm:delete_client' id=client.id slug=client.slug %}" method="post" style="display: inline" onsubmit="return confirm('Are you sure you want to delete this client?');">
+            {% csrf_token %}
+            <button type="submit" class="form-submit button-33">Usuń</button>
+        </form>
         </div>
         <img
             class="banner"
@@ -19,6 +25,8 @@
         <h1>{{ client.name }}</h1>
         <p>{{ client.address }}</p>
         <p>{{ client.author }}</p>
+
+
     </div>
 
     <a href="/klienci" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>

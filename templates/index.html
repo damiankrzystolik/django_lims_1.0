@@ -8,7 +8,7 @@
     <h1>Strona główna.</h1><br>
     <p> Tu cos można wpisać i inne takie, ale glównie chodzi o to,</p>
     <p>żeby przejsc z tąd na inną strone.</p><br>
-    <p>Na <a href="/orm">podstronie</a> bedzie można wypełnć formularz dodania klienta</p>
+    <p>Na tej <a href="{% url 'orm:new-client' %}">podstronie</a> bedzie można wypełnć formularz dodania klienta</p>
     <p>z aplikacji LIMS. Takie początki nauki.</p>
-    <p>A tu jeszcze <a href="/klienci">dalej</a> idziemy do listy Klientów</p>
+    <p>A tu jeszcze <a href="{% url 'orm:client_list' %}">dalej</a> idziemy do listy Klientów</p>
 {% endblock %}
