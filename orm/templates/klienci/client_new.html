@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load django_bootstrap5 %}
 
 
 
@@ -8,14 +9,16 @@
 {% endblock %}
 
 {% block content %}
-    <div class="client">
-        <h1>
+    <div class="col-md-7 col-lg-8 mt-3">
+        <h1 class="mb-3">
             Nowy Klient
         </h1>
         <form class="form-with-validation " action="{% url 'orm:new-client' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form }}
-            <button class="form-submit button-33">Dodaj Klienta</button>
+            {% bootstrap_form form %}
+
+{#            <button class="form-submit button-33">Dodaj Klienta</button>#}
+            {% bootstrap_button button_type="submit" content="Dodaj Klienta" %}
         </form>
     </div>
     <a href="/klienci" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>

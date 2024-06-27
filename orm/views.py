@@ -56,3 +56,14 @@ def delete_client(request, id, slug):
         client.delete()
         return redirect('orm:client_list')
     return redirect('orm:client_detail', id=id)
+
+def search_client(request):
+    form = forms.ClientSearchForm(request.GET)
+    clients = None
+
+    if 'query' in request.GET:
+        form = forms.ClientSearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            clients = Client.objects.filter(name__icontains=query)
+    return render(request, 'klienci/search_results.html', {"form": form, "clients": clients})

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+
+{% block title %}Wyszukaj klienta{% endblock %}
+
+{% block content %}
+<div class="search">
+<div class='mb-3 mt-3'>
+    <form method="GET" action="{% url 'orm:search_client' %}">
+        {{ form.as_p }}
+    {#        <button type="submit" class="button-33 ">Szukaj</button>#}
+        {% bootstrap_button button_type="submit" content="Szukaj" %}
+
+    </form>
+</div>
+    <div class='mb-3'>
+        <a class='mb-3' href="{% url 'orm:client_list' %}" class="pb-3">{% bootstrap_button button_type="submit" content="Wróć do listy"  %}</a>
+        {#{% bootstrap_button button_type="submit" content="Dodaj Klienta" %}#}
+        {#<button role=button class="button-33 button-334 ">Wróć do listy</button>#}
+    </div>
+</div>
+
+<section>
+    <div >
+         <table class="table table-striped">
+            <thead>
+                <tr class="table-success">
+                    <th>ID Klienta</th>
+                    <th>Nazwa Klienta</th>
+
+                    <th>Adres</th>
+                    <th>Dodany przez użytkownika</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if clients %}
+                     {% for client in clients %}
+                    <tr>
+                        <td>
+                            {{ client.id }}
+                        </td>
+                        <td>
+                            <a href="{% url 'orm:client_page'  id=client.id slug=client.slug %}">
+                                {{ client.name }}
+                            </a>
+                        </td>
+
+                        <td>{{ client.address }}</td>
+                        <td>{{ client.author }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+         </table>
+                {% else %}
+                    {% if 'query' in request.GET %}
+                        <p>Brak wyników dla zapytania.</p>
+                    {% endif %}
+                {% endif %}
+{#                    <a href="{% url 'orm:client_list' %}">Wróć do listy</a>#}
+                  <a href="/" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
+                {% endblock %}

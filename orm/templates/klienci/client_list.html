@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load django_bootstrap5 %}
 
 {% block title %}
     Klienci
@@ -7,25 +8,33 @@
 
 {% block content %}
     <h1>Lista Klientów</h1>
+    <!-- Dodanie sekcji wyszukiwania, jeśli potrzebujesz -->
+<div class="search">
+    <form method="GET" action="{% url 'orm:search_client' %}">
+        {{ form.as_p }}
+{#          <button type="submit" class="button-33">Wyszukaj Klienta</button>#}
+        <div class="mb-3">{% bootstrap_button button_type="submit" content="Wyszukaj Klienta" %}</div>
+    </form>
+</div>
 
     <section>
-    <div class="table-wrapper">
-         <table>
+    <div >
+         <table class="table table-striped table-hover table-bordered">
             <thead>
-                <tr>
-                    <th>ID Klienta</th>
-                    <th>Nazwa Klienta</th>
+                <tr  class="table-success">
+                    <th scope="col">ID Klienta</th>
+                    <th scope="col">Nazwa Klienta</th>
 
                     <th>Adres</th>
                     <th>Dodany przez użytkownika</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-group-divider">
                 {% for client in clients %}
                     <tr>
-                        <td>
+                        <th scope="col">
                             {{ client.id }}
-                        </td>
+                        </th>
                         <td>
                             <a href="{% url 'orm:client_page'  id=client.id slug=client.slug %}">
                                 {{ client.name }}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -9,8 +10,12 @@
             Django App
         {% endblock %}
     </title>
+    {% load django_bootstrap5 %}
+    {%  bootstrap_css %}
+    {% bootstrap_javascript %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/main.js' %}" defer></script>
+   
 </head>
 <body>
     <nav class="navbar">
@@ -30,10 +35,10 @@
             <a href="{% url 'users_app:register' %}" title="Nowy użytkownik"><img src="{% static 'images/user.png' %}" alt="user icon"></a> | {# register#}
             <a href="{% url 'users_app:login' %}" title="Logowanie"><img src="{% static 'images/password.png' %}"></a> |   {# login#}        
         
-        {% endif %}   &nbsp&nbsp&nbsp&nbsp__LIMS__project.blog<span id="magiczny_tusz">jebać GranTeam</span>
+        {% endif %}   &nbsp&nbsp&nbsp&nbsp__LIMS__project.blog
         <a href="/admin" title="Admin, czyli Ja" class="admin_logo"><img src="{% static 'images/software-engineer.png' %}"></a>  {# admin#}
     </nav>
-    <main>
+    <main class="container">
         {% block content %}
         {% endblock %}
 

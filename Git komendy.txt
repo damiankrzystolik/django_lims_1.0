@@ -1,0 +1,5 @@
+pusz na gitlaba
+git push --all --set-upstream origin
+
+push na githuba
+git push --all --set-upstream github

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load django_bootstrap5 %}
 
 
 {% block title %}
@@ -28,8 +28,9 @@
 {#            <button type="submit">Zarejestruj się</button>#}
 
             {% csrf_token %}
-            {{ form }}
-            <button class="button-33" role="button">Submit</button>
+            {% bootstrap_form form %}
+{#            <button class="button-33" role="button">Submit</button>#}
+            {% bootstrap_button button_type="submit" content="Dodaj Użytkownika" %}
         </form>
         <a href="/" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
     </div>
