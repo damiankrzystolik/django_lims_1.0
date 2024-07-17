@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+   Zlecenie wykonania oznaczenia
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-7 col-lg-8 mt-3">
+        <h1 class="mb-3">
+            Zlecenie wykonania oznaczenia
+        </h1>
+        <form class="form-with-validation" method="post">
+
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+
+            {% bootstrap_button button_type="submit" content="Zapisz" %}
+        </form>
+    </div>
+    <a href="/klienci" class="homepage"><img src="{% static 'images/back-arrow.png' %}"></a>
+{% endblock %}
+
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#    <title>Badany Obiekt Form</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Formularz Badanego Obiektu</h1>#}
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <button type="submit">Zapisz</button>#}
+{#    </form>#}
+{#</body>#}
+{#</html>#}

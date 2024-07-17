@@ -20,12 +20,15 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+app_name = 'home'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('orm/', views.form),
     path('', views.index),
     path('klienci/', include('orm.urls')),
     path('users_app/', include('users_app.urls')),
+    path('', include('order.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

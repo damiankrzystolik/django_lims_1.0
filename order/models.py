@@ -4,6 +4,8 @@ import datetime
 from orm.models import Client
 
 # Create your models here.
+
+
 class Order(models.Model):
     ORDER_CHOICES = [
         ('wegiel', 'Węgiel'),
@@ -12,7 +14,7 @@ class Order(models.Model):
     ]
 
     badany_obiekt = models.CharField(max_length=10, choices=ORDER_CHOICES)
-    name = models.ForeignKey(Client, on_delete=models.CASCADE)  # Dodajemy pole klienta
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
     opis = models.TextField()
     date = models.DateField(default=datetime.date.today, null=True, blank=True)
 

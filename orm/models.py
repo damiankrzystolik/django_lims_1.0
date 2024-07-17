@@ -12,7 +12,6 @@ class Client(models.Model):
     banner = models.ImageField(default='aaa.png', blank=True)
     author = models.ForeignKey(User,  on_delete=models.SET_NULL, null=True, blank=True, default=None)
 
-
     def __str__(self):
         return f'{self.name} - {self.slug}'
 

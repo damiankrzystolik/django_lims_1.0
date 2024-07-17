@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "django_bootstrap5",
     'orm.apps.OrmConfig',
     'users_app',
-
+    'order',
 ]
 
 MIDDLEWARE = [
